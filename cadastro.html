@@ -7,7 +7,7 @@
 </head>
 <body>
     <header> 
-        <h1>Cadastro de Usuário</h1>
+        <h1>Cadastro de Voluntários</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -39,6 +39,14 @@
 
                     <label for="nascimento">Data de Nascimento:</label>
                     <input type="date" id="nascimento" name="nascimento" required><br><br>
+                    <label for="genero">Gênero:</label>
+                    <select id="genero" name="genero" required>
+                        <option value="">Selecione</option>
+                        <option value="feminino">Feminino</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="outro">Outro</option>
+                        <option value="nao_informar">Prefiro não informar</option>
+                    </select><br><br>
                 </fieldset>
 
                 <fieldset>
@@ -58,8 +66,9 @@
                 </fieldset>
 
                 <input type="submit" value="Cadastrar">
+                <input type="reset" value="Limpar">
             </form>
-        </section>
+        </section> 
     </main>
 
     <footer>
