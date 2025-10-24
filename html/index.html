@@ -11,12 +11,12 @@
 </head>
 <body>
     <header> 
-        <div class="Logo-header"> 
+        <div class="logo-header"> 
         <img src="../imagens/patasdobemlogo.png" alt="Patas do Bem Logo" class="logo">
         <h1>ONG Patas do Bem</h1>
         <div>
         <nav>
-            <ul>
+            <ul id="menu-list">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="projetos.html">Projetos</a></li>
                 <li><a href="cadastro.html">Cadastro</a></li>
@@ -25,24 +25,27 @@
     </header>
         
     <main>
-        <section>
+        <section class="introducao">
+            <div class="quem-somos">
             <h2>Quem Somos</h2>
             <img src="../imagens/patasdobemlogo.png" alt="Animais sendo cuidados" width="400">
             <p>Somos uma ONG dedicada ao cuidado e proteção dos animais abandonados e vítimas de maus-tratos.</p>
             <p>Nossa equipe é formada por voluntários apaixonados que trabalham incansavelmente para resgatar, tratar e encontrar lares amorosos para esses animais.</p>    
             <p>Junte-se a nós nessa missão!</p> 
-
+            <div>
         </section>
 
-        <section>
+        <section class="missao">
+            <Div class="missao-conteudo">
             <h2>Missão da ONG</h2>
             <p>Promover o bem-estar animal por meio de resgate, tratamento e adoção responsável.</p>
             <p>Educar a comunidade sobre a importância do respeito e cuidado com os animais.</p>
             <p>Advogar por políticas públicas que protejam os direitos dos animais.</p>
-
+            </Div>
         </section>
 
-        <section>
+        <section class="contato">
+            <Div class="contato-conteudo">
             <h2>Contato</h2>
             <address>
                 <p><strong>Email:</strong> contato@onganimais.com.br</p>
@@ -50,12 +53,15 @@
                 <p><strong>Endereço:</strong> Rua dos Animais, 123 - São Paulo, SP</p>
                 <p><strong>CEP:</strong> 01234-567</p>
             </address>
+            </Div>
         </section>
 
-        <section>
-    <h2>Redes Sociais</h2>
-    <p>Siga-nos nas redes sociais para ficar por dentro das nossas ações e campanhas:</p>
-    <ul class="redes-sociais">
+        <section class="redes-sociais">
+        <div class="redes-sociais-conteudo">
+        <h2>Redes Sociais</h2>
+        <p>Siga-nos nas redes sociais para ficar por dentro das nossas ações e campanhas:</p>
+        <div>
+        <ul class="redes-sociais">
         <li>
             <a href="https://www.facebook.com/ongPatasdoBem" target="_blank">
                 <i class="fa-brands fa-facebook-f"></i> Facebook
@@ -72,10 +78,11 @@
             </a>
         </li>
     </ul>
+    
 </section>
     </main>
 
-    <footer>
+    <footer class="footer">
         <p>&copy; 2025 ONG Patas do Bem. Todos os direitos reservados.</p>
     </footer>
 </body>

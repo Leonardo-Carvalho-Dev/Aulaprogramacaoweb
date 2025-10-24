@@ -10,12 +10,13 @@
 </head>
 <body>
     <header>
-        <div class="Logo-header"> 
+        <div class="logo-header"> 
         <img src="../imagens/patasdobemlogo.png" alt="Patas do Bem Logo" class="logo">
-        <div>
         <h1>Projetos Sociais</h1>
+        </div>  
+        <button class="munu-toggler" onclick="ToggleEvent"> </button>
         <nav>
-            <ul>
+            <ul id="menu-list">
                 <li><a href="index.html">Home</a></li>      
                 <li><a href="projetos.html">Projetos</a></li>
                 <li><a href="cadastro.html">Cadastro</a></li>
@@ -24,19 +25,19 @@
     </header>
 
     <main>
-        <section>
+        <section class="voluntariado"> ">
             <h2>Voluntariado</h2>
             <img src="../imagens/ImagemVoluntarios.png" alt="Voluntários cuidando de animais" width="400">
             <p>Seja voluntário! Ajude em resgates, feiras de adoção, campanhas de conscientização e muito mais.</p>
         </section>
                 
-        <section>
+        <section class="adocao">
             <h2>Projetos de Adoção</h2>
             <img src="../imagens/Adotepet.jpg" alt="Cachorro adotado feliz" width="400">
             <p>Conheça nossos projetos de adoção e ajude a encontrar um lar amoroso para nossos animais resgatados.</p>
         </section>
 
-        <section>
+        <section class="doacao">
             <h2>Apoie Nossa Causa: Como Fazer Sua Doação</h2>
             <p>Você pode colaborar com doações de ração, medicamentos ou contribuições financeiras.</p>
         
@@ -45,7 +46,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer class="footer">
         <p>&copy; 2025 ONG Patas do Bem. Todos os direitos reservados.</p>
     </footer>
 </body>

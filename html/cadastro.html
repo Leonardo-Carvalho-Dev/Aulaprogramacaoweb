@@ -15,7 +15,7 @@
         <h1>Cadastro de Voluntários</h1>
         </div>
         <nav>
-            <ul> 
+            <ul id="menu-list">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="projetos.html">Projetos</a></li>
                 <li><a href="cadastro.html">Cadastro</a></li>
@@ -24,11 +24,11 @@
     </header>
 
     <main>
-        <section>
+        <section class="formulario-cadastro">
             <h2>Preencha o formulário para participar</h2>
 
             <form action="#" method="POST">
-                <fieldset>
+                <fieldset class="dados-pessoais">
                     <legend>Dados Pessoais</legend>
 
                     <label for="nome">Nome Completo:</label>
@@ -55,7 +55,7 @@
                     </select><br><br>
                 </fieldset>
 
-                <fieldset>
+                <fieldset class="endereco">
                     <legend>Endereço</legend>
 
                     <label for="endereco">Endereço:</label>
@@ -71,8 +71,10 @@
                     <input type="text" id="estado" name="estado" maxlength="2" placeholder="SP" required><br><br>
                 </fieldset>
 
-                <input type="submit" value="Cadastrar">
+                <Div class="botoes-formulario">
+                <input type="submit" value="Cadastrar" >
                 <input type="reset" value="Limpar">
+                </Div>
             </form>
         </section> 
 
@@ -82,7 +84,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer class="footer">
         <p>&copy; 2025 ONG Patas do Bem. Todos os direitos reservados.</p>
     </footer>
 </body>
