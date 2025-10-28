@@ -8,12 +8,14 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
+</head>
 <body>
     <header>
         <div class="logo-header"> 
         <img src="../imagens/patasdobemlogo.png" alt="Patas do Bem Logo" class="logo">
         <h1>Cadastro de Voluntários</h1>
-        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <div> 
         <nav>
             <ul id="menu-list">
                 <li><a href="index.html">Home</a></li>
@@ -26,6 +28,7 @@
     <main>
         <section class="formulario-cadastro">
             <h2>Preencha o formulário para participar</h2>
+            <div class="toast success"> ✅ Mensagem enviada com sucesso!</div>
 
             <form action="#" method="POST">
                 <fieldset class="dados-pessoais">
@@ -71,12 +74,33 @@
                     <input type="text" id="estado" name="estado" maxlength="2" placeholder="SP" required><br><br>
                 </fieldset>
 
+                <Fieldset>  
+                    <legend>Preferências do Voluntário</legend>
+
+                    <label for="areas_interesse">Área de Interesse:</label><br>
+                    <select id="areas_interesse" name="areas_interesse">
+                        <option value="" disabled selected>Selecione uma opção</option>
+                        <option value="resgate">Resgate de Animais</option>
+                        <option value="suporte">Suporte</option>
+                        <option value="doacao">Doação</option>
+                    </select>   
+
+                    <label for="disponibilidade">Disponibilidade (dias/horários):</label><br>
+                    <textarea id="disponibilidade" name="disponibilidade" rows="4" cols="50" placeholder="Descreva sua disponibilidade..." required></textarea><br><br>
+                </Fieldset>
+
                 <Div class="botoes-formulario">
-                <input type="submit" value="Cadastrar" >
-                <input type="reset" value="Limpar">
+                <button type="submit">Enviar</button>
+                <button type="reset">Limpar</button>
                 </Div>
             </form>
         </section> 
+        <section class="voluntarios-lista">
+                <h2>Voluntários Cadastrados</h2>
+                <div id="tabelaVoluntarios">
+                    <!-- Aqui a tabela será gerada automaticamente pelo JavaScript -->
+                </div>
+            </section>
 
         <section>   
             <h2>Informações Adicionais</h2>
