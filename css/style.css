@@ -1,8 +1,4 @@
-/* ==========================================================
-   SISTEMA DE DESIGN GLOBAL - ONG PATAS DO BEM
-   ========================================================== */
-
-/* --------- VARIÁVEIS :root --------- */
+/*  VARIÁVEIS CSS  */
 :root {
   /* Paleta de Cores */
   --color-primary: #52c692;       /* Verde principal */
@@ -109,7 +105,7 @@ header {
 
 .logo-header {
   display: flex;
-  align-items: relative;
+  align-items: auto;
   justify-content: center;
   flex-direction: column;
   text-align: center;
@@ -120,18 +116,20 @@ header {
   height: auto;
   margin-bottom: var(--space-1);
   position: absolute;
+  left: var(--space-3);
 }
 
 .menu-toggle {
   display: flex;
   background: none;
   border: none;
-  color: white;
+  color: white;position: relative;
   font-size: 28px;
   cursor: pointer;
   position: absolute;
   width: auto;
-  left: 1400px;
+  top: 20px;
+  right: var(--space-3);
 }
 
 header h1 {
@@ -302,26 +300,3 @@ footer {
 .mt-2 { margin-top: var(--space-2); }
 .mt-4 { margin-top: var(--space-4); }
 
-.toast {
-  position: fixed;
-  bottom: var(--space-3);
-  right: var(--space-3);
-  background: var(--color-primary);
-  color: white;
-  padding: var(--space-2) var(--space-3);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-md);
-  opacity: 0;
-  transform: translateY(20px);
-  animation: toast-in 0.5s forwards;
-}
-
-.toast.success { background: var(--color-success); }
-.toast.error { background: var(--color-danger); }
-
-@keyframes toast-in {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
