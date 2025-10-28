@@ -105,7 +105,7 @@ header {
 
 .logo-header {
   display: flex;
-  align-items: auto;
+  align-items: center;
   justify-content: center;
   flex-direction: column;
   text-align: center;
