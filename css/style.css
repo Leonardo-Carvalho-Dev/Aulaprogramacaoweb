@@ -346,21 +346,3 @@ footer {
     word-break: break-word; 
     max-width: 200px;
 }
-
-
-/* BOTÕES - Novo estilo para o botão de reset/limpeza */
-.btn-danger {
-    background: var(--color-danger); /* Usa a cor vermelha definida nas suas variáveis CSS */
-    color: white;
-    border: none;
-    border-radius: var(--radius);
-    padding: var(--space-2) var(--space-3);
-    cursor: pointer;
-    font-size: var(--fs-sm);
-    font-weight: 500;
-    transition: background var(--transition), transform var(--transition);
-}
-.btn-danger:hover {
-    background: #c62828; /* Um tom de vermelho mais escuro no hover */
-    transform: translateY(-2px);
-}

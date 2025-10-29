@@ -1,25 +1,10 @@
-// =================================================================
-//                      FUNÇÕES DE NAVEGAÇÃO
-// =================================================================
+// FUNÇÕES DE NAVEGAÇÃO //
 function toggleMenu() {
     const menu = document.getElementById('menu-list');
     menu.classList.toggle('active');
 }
 
-// Limpar Voluntários //
-function resetVoluntarios() {
-    
-    if (confirm('Tem certeza que deseja apagar TODOS os voluntários cadastrados? Esta ação é irreversível.')) {
-        
-        localStorage.removeItem('voluntarios');
-      
-        exibirVoluntarios();
-
-        alert('Lista de voluntários apagada com sucesso!');
-    }
-}
-
-// Função de Máscara de Telefone //
+// Função de Máscara de Telefone (Handler Reutilizável) //
 function phoneMaskHandler(e) {
     let valor = e.target.value.replace(/\D/g, '');
     if (valor.length > 11) valor = valor.slice(0, 11);
@@ -28,111 +13,58 @@ function phoneMaskHandler(e) {
     e.target.value = valor;
 }
 
-// **Função de Inicialização de Scripts da Página**
-function initializePageScripts() {
-    const form = document.getElementById('cadastroForm');
-    if (form) {
-        form.removeEventListener('submit', handleFormSubmit); 
-        form.addEventListener('submit', handleFormSubmit);
-        exibirVoluntarios(); // Carrega os dados existentes
-
-        const telefoneInput = document.getElementById('telefone');
-        if (telefoneInput) {
-            telefoneInput.removeEventListener('input', phoneMaskHandler);
-            telefoneInput.addEventListener('input', phoneMaskHandler);
-        }
-    }
-    
-    const resetBtn = document.getElementById('resetVoluntariosBtn');
-    if (resetBtn) {
-        resetBtn.removeEventListener('click', resetVoluntarios); 
-        resetBtn.addEventListener('click', resetVoluntarios);
-    }
-    
-   
-    window.dispatchEvent(new Event('scroll')); 
-}
-
-
-// INICIALIZAÇÃO GERAL//
-
-window.addEventListener('load', () => {
-    
-    initializePageScripts();
-});
-
-
-// scroll //
-function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-    
-        const headerheeight = document.querySelector('.header').offsetHeight;
-        window.scrollBy(0, -headerheeight);
-
-        const menu = document.getElementById('menu-list');
-        if (menu.classList.contains('active')) {
-            menu.classList.remove('active');
-        }
-    }
-}
-
-// Função: Verificação de Consistência e Submissão do Formulário //
+// FUNÇÃO DE SUBMISSÃO E VALIDAÇÃO (Inclui REGEX) //
 function handleFormSubmit(event) {
     event.preventDefault();
    
     const form = document.getElementById('cadastroForm');
     
-  
+    // Coleta dos campos //
     const nome = form.elements['nome'].value;
     const email = form.elements['email'].value;
     const telefone = form.elements['telefone'].value;
-    
     const areasInteresse = form.elements['areas_interesse'].value; 
     const disponibilidade = form.elements['disponibilidade'].value;
 
     
-    // Validação de Consistência de Dados //
+    // Validação de Consistência (Campos Vazios) //
     if (!nome || !email || !telefone || areasInteresse === "" || !disponibilidade) {
-        alert('Por favor, preencha todos os campos obrigatórios (Nome, E-mail, Telefone, Área de Interesse e Disponibilidade).');
+        alert('Por favor, preencha todos os campos obrigatórios.');
         return;
     }
     
+    // Validação de Consistência (Formato REGEX do Telefone) //
+    const telefoneRegex = /^\(\d{2}\)\s\d{5}-\d{4}$/;
+    if (!telefoneRegex.test(telefone)) {
+        alert('Por favor, preencha o Telefone no formato (00) 00000-0000.');
+        return;
+    }
 
-    // Coleta dos dados //
+    // Armazenamento Local //
     const formData = {
-        nome,
-        email,
-        telefone,
-        areasInteresse,
-        disponibilidade,
+        nome, email, telefone, areasInteresse, disponibilidade,
         dataCadastro: new Date().toLocaleDateString('pt-BR')
     };
     
-    // Armazenamento Local //
     let voluntarios = JSON.parse(localStorage.getItem('voluntarios')) || [];
     voluntarios.push(formData);
     localStorage.setItem('voluntarios', JSON.stringify(voluntarios));
 
-    //  Mensagem de Sucesso //
+    // Feedback visual //
     const successMessage = document.getElementById('successMessage');
     successMessage.innerText = '✅ Cadastro realizado com sucesso! Entraremos em contato em breve.';
     successMessage.style.display = 'block';
-    successMessage.scrollIntoView({ behavior: 'smooth' }); 
     form.reset();
 
-    // Esconde a mensagem após 5 segundos //
     setTimeout(() => {
         successMessage.style.display = 'none';
     }, 5000);
 
-    // Atualiza a lista de voluntários //
     exibirVoluntarios();
 }
 
 
-// Função: Sistema de Templates JavaScript //
+// FUNÇÃO DE TEMPLATES //
 function exibirVoluntarios() {
     const voluntarios = JSON.parse(localStorage.getItem('voluntarios')) || [];
     const tabelaDiv = document.getElementById('tabelaVoluntarios');
@@ -144,8 +76,7 @@ function exibirVoluntarios() {
         return;
     } 
     
-    let tableHTML = '<h3 class="mt-4"></h3><table>';
-  
+    let tableHTML = '<table>'; 
     tableHTML += '<thead><tr><th>Nome</th><th>E-mail</th><th>Telefone</th><th>Interesse</th><th>Disponibilidade</th><th>Cadastro</th></tr></thead>';
     tableHTML += '<tbody>';
 
@@ -156,7 +87,8 @@ function exibirVoluntarios() {
                 <td>${voluntario.email}</td>
                 <td>${voluntario.telefone}</td>
                 <td>${voluntario.areasInteresse}</td>
-                <td>${voluntario.disponibilidade}</td> <td>${voluntario.dataCadastro}</td>
+                <td>${voluntario.disponibilidade}</td>
+                <td>${voluntario.dataCadastro}</td>
             </tr>
         `;
     });
@@ -166,17 +98,25 @@ function exibirVoluntarios() {
 }
 
 
-// Máscara de Telefone //
-const telefoneInput = document.getElementById('telefone');
-if (telefoneInput) {
-    telefoneInput.addEventListener('input', function(e) {
-        let valor = e.target.value.replace(/\D/g, '');
-        if (valor.length > 11) valor = valor.slice(0, 11);
-        valor = valor.replace(/^(\d{2})(\d)/g, '($1) $2');
-        valor = valor.replace(/(\d{5})(\d)/, '$1-$2');
-        e.target.value = valor;
-    });
+// FUNÇÃO DE INICIALIZAÇÃO //
+function initializePageScripts() {
+    // Configura o Formulário (Submit e Máscara) //
+    const form = document.getElementById('cadastroForm');
+    if (form) {
+        form.removeEventListener('submit', handleFormSubmit); 
+        form.addEventListener('submit', handleFormSubmit);
+        exibirVoluntarios();
+
+        const telefoneInput = document.getElementById('telefone');
+        if (telefoneInput) {
+            telefoneInput.removeEventListener('input', phoneMaskHandler);
+            telefoneInput.addEventListener('input', phoneMaskHandler);
+        }
+    }
+    
+    window.dispatchEvent(new Event('scroll')); 
 }
+
 
 // Listener de Animação de Scroll //
 window.addEventListener('scroll', () => {
@@ -191,26 +131,7 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Inicialização: Exibe voluntários e anexa o listener do formulário //
+// INICIALIZAÇÃO GERAL //
 window.addEventListener('load', () => {
-    exibirVoluntarios();
-    const form = document.getElementById('cadastroForm');
-    if (form) {
-        form.addEventListener('submit', handleFormSubmit);
-    }
+    initializePageScripts();
 });
-
-// **NOVA FUNÇÃO: Resetar o Histórico de Voluntários**
-function resetVoluntarios() {
-    // Pede confirmação antes de apagar, pois é uma ação irreversível
-    if (confirm('Tem certeza que deseja apagar TODOS os voluntários cadastrados? Esta ação é irreversível.')) {
-        
-        // **AÇÃO PRINCIPAL:** Remove a chave 'voluntarios' do Local Storage
-        localStorage.removeItem('voluntarios');
-        
-        // Atualiza a exibição da tabela (que agora mostrará a mensagem de 'Nenhum voluntário cadastrado')
-        exibirVoluntarios();
-
-        alert('Lista de voluntários apagada com sucesso!');
-    }
-}
