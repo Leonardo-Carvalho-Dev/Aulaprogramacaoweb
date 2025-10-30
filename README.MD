@@ -7,25 +7,35 @@ Este projeto é um site institucional desenvolvido para a ONG Patas do Bem, com 
 A principal página do projeto é cadastro.html, onde se concentram as funcionalidades dinâmicas do site.
 
 Funcionalidade	Descrição	Status
-Persistência de Dados	Armazenamento dos dados dos voluntários no localStorage do navegador.	✅ Completo
-Exibição Dinâmica	Geração automática da tabela de voluntários cadastrados via JavaScript.	✅ Completo
-Máscara de Telefone	Aplicação de máscara em tempo real no formato (00) 00000-0000.	✅ Completo
-Validação de Formulário	Verificação de campos obrigatórios: nome, email, telefone, área de interesse e disponibilidade.	✅ Completo
-Validação com Regex	Expressões regulares garantem a consistência do formato de telefone.	✅ Completo
-Design Responsivo	Layout adaptável a diferentes tamanhos de tela (mobile-first).	✅ Completo
+Persistência de Dados	Armazenamento dos dados dos voluntários no localStorage do navegador.
+
+Exibição Dinâmica	Geração automática da tabela de voluntários cadastrados via JavaScript.	
+
+Máscara de Telefone	Aplicação de máscara em tempo real no formato (00) 00000-0000.
+
+Validação de Formulário	Verificação de campos obrigatórios: nome, email, telefone, área de interesse e disponibilidade.	
+
+Validação com Regex	Expressões regulares garantem a consistência do formato de telefone.	
+
+Design Responsivo	Layout adaptável a diferentes tamanhos de tela (mobile-first).	
 
 ## Estrutura de Pastas e Arquivos
 📁 patas-do-bem/
 ├── css/
 │   └── style.css           # Estilos e responsividade do site
+
 │
 ├── js/
 │   └── script.js           # Lógica de front-end (validações, localStorage, máscaras e tabela)
+
 │
 ├── imagens/                # Imagens utilizadas no projeto (logo, banners)
+
 │
 ├── index.html              # Página inicial (Home)
+
 ├── projetos.html           # Página de projetos e informações sobre doações
+
 └── cadastro.html           # Página de cadastro de voluntários
 
 ## Detalhamento do script.js
