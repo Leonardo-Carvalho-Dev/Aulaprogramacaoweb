@@ -70,4 +70,4 @@ O site está publicado em ambiente de produção via **Netlify**:
 - Ambiente: Netlify (integração automática com GitHub)
 - Branch utilizada: `main`
 - Build otimizada para produção (HTML, CSS e JS minificados)
-- Layout responsivo e acessível (WCAG 2.1 Nível AA)
+- Layout responsivo e acessível (WCAG 2.1 Nível AA).
