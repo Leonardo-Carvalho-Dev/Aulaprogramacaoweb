@@ -19,3 +19,15 @@
 └── cadastro.html           # Página principal do formulário e lista de voluntários.
 
 💻 Detalhamento do script.jsO arquivo script.js contém todas as funções necessárias para o dinamismo da página de cadastro.FunçãoAplicaçãoObservaçõeshandleFormSubmit(event)FormulárioCaptura dados, realiza as validações (campos vazios e Regex) e salva o objeto voluntario no Local Storage.phoneMaskHandler(e)Máscara de EntradaAplica a formatação (00) 00000-0000 conforme o usuário digita.exibirVoluntarios()Tabela DinâmicaCarrega os dados do localStorage e injeta o código HTML da tabela na div id="tabelaVoluntarios".toggleMenu()NavegaçãoControla a abertura e fechamento do menu de navegação em dispositivos móveis.initializePageScripts()InicializaçãoAtivada no window.load. Anexa os listeners de eventos de submit e input (máscara) e chama exibirVoluntarios() para carregar os dados iniciais.
+
+##  Deploy e Acesso ao Projeto
+
+O site está publicado em ambiente de produção via **Netlify**:
+
+ [Acessar o site da ONG Patas do Bem](https://patasdobem.netlify.app)
+
+###  Detalhes do Deploy
+- Ambiente: Netlify (integração automática com GitHub)
+- Branch utilizada: `main`
+- Build otimizada para produção (HTML, CSS e JS minificados)
+- Layout responsivo e acessível (WCAG 2.1 Nível AA)
