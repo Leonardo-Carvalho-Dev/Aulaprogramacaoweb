@@ -20,23 +20,19 @@ Validação com Regex	Expressões regulares garantem a consistência do formato 
 Design Responsivo	Layout adaptável a diferentes tamanhos de tela (mobile-first).	
 
 ## Estrutura de Pastas e Arquivos
-📁 patas-do-bem/
+patas-do-bem/
+│
 ├── css/
-│   └── style.css           # Estilos e responsividade do site
-
+│   └── style.css        # Estilos e responsividade do site
 │
 ├── js/
-│   └── script.js           # Lógica de front-end (validações, localStorage, máscaras e tabela)
-
+│   └── script.js        # Lógica de front-end (validações, localStorage, máscaras e tabela)
 │
-├── imagens/                # Imagens utilizadas no projeto (logo, banners)
-
+├── imagens/             # Imagens utilizadas no projeto (logo, banners)
 │
-├── index.html              # Página inicial (Home)
-
-├── projetos.html           # Página de projetos e informações sobre doações
-
-└── cadastro.html           # Página de cadastro de voluntários
+├── index.html           # Página inicial (Home)
+├── projetos.html        # Página de projetos e informações sobre doações
+└── cadastro.html        # Página de cadastro de voluntários
 
 ## Detalhamento do script.js
 
