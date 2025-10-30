@@ -1,24 +1,53 @@
-🐾 ONG Patas do Bem - Site Institucional e Cadastro de VoluntáriosEste projeto é um site institucional para a ONG Patas do Bem, focado na divulgação de seus projetos e, principalmente, na gestão de cadastro de novos voluntários utilizando recursos avançados de Front-End (JavaScript puro).
+## ONG Patas do Bem — Site Institucional e Cadastro de Voluntários
 
-💡 Requisitos e Funcionalidades ImplementadasO foco principal do projeto é a página de cadastro (cadastro.html), onde as seguintes funcionalidades-chave foram implementadas:FuncionalidadeDescriçãoStatusPersistência de DadosArmazenamento dos dados dos voluntários no localStorage do navegador.
-✅ CompletoExibição DinâmicaGeração automática da tabela de voluntários cadastrados na página (cadastro.html) via JavaScript.
-✅ CompletoMáscara de TelefoneAplicação de máscara de entrada em tempo real para o formato (00) 00000-0000.
-✅ CompletoValidação de FormulárioValidação para campos obrigatórios (nome, email, telefone, área de interesse e disponibilidade).
-✅ CompletoValidação RegexUso de Expressões Regulares para garantir a consistência do formato de telefone.
-✅ CompletoDesign ResponsivoO layout adapta-se a diferentes tamanhos de tela (mobile-first).
-✅ Completo
+Este projeto é um site institucional desenvolvido para a ONG Patas do Bem, com o objetivo de divulgar seus projetos e gerenciar o cadastro de novos voluntários utilizando JavaScript puro no Front-End.
 
-📁 Estrutura de ArquivosO projeto está organizado em três páginas principais, que compartilham a mesma estilização e lógica JavaScript..
+## Funcionalidades Principais
+
+A principal página do projeto é cadastro.html, onde se concentram as funcionalidades dinâmicas do site.
+
+Funcionalidade	Descrição	Status
+Persistência de Dados	Armazenamento dos dados dos voluntários no localStorage do navegador.	✅ Completo
+Exibição Dinâmica	Geração automática da tabela de voluntários cadastrados via JavaScript.	✅ Completo
+Máscara de Telefone	Aplicação de máscara em tempo real no formato (00) 00000-0000.	✅ Completo
+Validação de Formulário	Verificação de campos obrigatórios: nome, email, telefone, área de interesse e disponibilidade.	✅ Completo
+Validação com Regex	Expressões regulares garantem a consistência do formato de telefone.	✅ Completo
+Design Responsivo	Layout adaptável a diferentes tamanhos de tela (mobile-first).	✅ Completo
+
+## Estrutura de Pastas e Arquivos
+📁 patas-do-bem/
 ├── css/
-│   └── style.css           # Estilos e responsividade do site.
+│   └── style.css           # Estilos e responsividade do site
+│
 ├── js/
-│   └── script.js           # Toda a lógica de front-end (Validação, Local Storage, Máscaras, Tabela).
-├── imagens/                # Imagens do projeto (logo, banners).
-├── index.html              # Página Inicial (Home).
-├── projetos.html           # Página de Projetos e Informações sobre Doações.
-└── cadastro.html           # Página principal do formulário e lista de voluntários.
+│   └── script.js           # Lógica de front-end (validações, localStorage, máscaras e tabela)
+│
+├── imagens/                # Imagens utilizadas no projeto (logo, banners)
+│
+├── index.html              # Página inicial (Home)
+├── projetos.html           # Página de projetos e informações sobre doações
+└── cadastro.html           # Página de cadastro de voluntários
 
-💻 Detalhamento do script.jsO arquivo script.js contém todas as funções necessárias para o dinamismo da página de cadastro.FunçãoAplicaçãoObservaçõeshandleFormSubmit(event)FormulárioCaptura dados, realiza as validações (campos vazios e Regex) e salva o objeto voluntario no Local Storage.phoneMaskHandler(e)Máscara de EntradaAplica a formatação (00) 00000-0000 conforme o usuário digita.exibirVoluntarios()Tabela DinâmicaCarrega os dados do localStorage e injeta o código HTML da tabela na div id="tabelaVoluntarios".toggleMenu()NavegaçãoControla a abertura e fechamento do menu de navegação em dispositivos móveis.initializePageScripts()InicializaçãoAtivada no window.load. Anexa os listeners de eventos de submit e input (máscara) e chama exibirVoluntarios() para carregar os dados iniciais.
+## Detalhamento do script.js
+
+O arquivo js/script.js centraliza toda a lógica dinâmica do projeto.
+
+Função	Aplicação	Descrição
+handleFormSubmit(event)	Formulário	Captura os dados, valida campos obrigatórios e formato de telefone, e salva o voluntário no localStorage.
+phoneMaskHandler(e)	Máscara de entrada	Aplica a máscara (00) 00000-0000 enquanto o usuário digita.
+exibirVoluntarios()	Tabela dinâmica	Carrega os dados do localStorage e gera dinamicamente a tabela dentro da div id="tabelaVoluntarios".
+toggleMenu()	Navegação	Controla o menu responsivo em dispositivos móveis.
+initializePageScripts()	Inicialização	Executada no window.onload; anexa os listeners de eventos e carrega os dados existentes.
+
+## Tecnologias Utilizadas
+
+HTML5 — Estrutura semântica das páginas
+
+CSS3 — Estilização e design responsivo (mobile-first)
+
+JavaScript (ES6+) — Validações, máscaras e manipulação dinâmica do DOM
+
+Local Storage — Persistência dos dados de voluntários no navegador
 
 ##  Deploy e Acesso ao Projeto
 
