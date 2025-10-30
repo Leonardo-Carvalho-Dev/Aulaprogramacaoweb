@@ -219,9 +219,8 @@ button[type="reset"] {
   background: var(--color-accent);
 }
 
-/* ===================== */
+
 /* MENSAGEM DE SUCESSO */
-/* ===================== */
 .success-message {
   display: none; /* fica oculta por padrão */
   border-left: 4px solid var(--color-success);
