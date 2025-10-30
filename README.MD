@@ -34,6 +34,7 @@ patas-do-bem/
 ├── projetos.html        # Página de projetos e informações sobre doações
 └── cadastro.html        # Página de cadastro de voluntários
 
+
 ## Detalhamento do script.js
 
 O arquivo js/script.js centraliza toda a lógica dinâmica do projeto.
